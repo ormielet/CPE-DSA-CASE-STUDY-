@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA-CPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="../css/landing-page.css">
+</head>
+<body data-base="../" id="top">
+
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <span class="eyebrow"><i></i> DSA · CASE STUDY</span>
+      <h1>DATA STRUCTURES<br>AND <em>ALGORITHM</em></h1>
+      <!-- Case Study Description #ADD INFO -->
+      <p class="lead"> i don't know what to add here.  <strong> mga pwedeng gawin ng user </strong>.</p>
+      <div class="hero-cta"><a class="btn" href="#menu">GET STARTED <span class="ar">→</span></a> </div>
+      <div class="chips"><span class="chip"><b>5</b> modules</span><span class="chip"><b>Live</b> visualizers</span><span class="chip"><b> Interactive</b> layout</span></div>
+    </div>
+    <div class="hero-art">
+      <span class="ring r1"></span><span class="ring r2"></span>
+      <div class="art-card"><img src="../images/logo.png" alt="DSA-CPE logo"></div>
+      <span class="fl f1">LIFO</span><span class="fl f2">FIFO</span><span class="fl f3">TREE</span><span class="fl f4">RECURSION</span>
+    </div>
+  </section>
+
+  <!--  MODULE MENU  -->
+  <section class="band" id="menu">
+    <div class="wrap">
+      <div class="pill-bar">
+        <h2>SELECT A DATA STRUCTURE MODULE TO BEGIN</h2>
+        <p>EXPLORE VARIOUS DATA STRUCTURES AND ALGORITHM</p>
+      </div>
+      <!-- Each card is a link to its own page inside /menu -->
+      <div class="cards">
+      <a class="mcard" href="stack.html">
+        <span class="tag">STACK</span><span class="tag">(PARKING GARAGE)</span>
+        <!-- PHOTO PLACEHOLDER (card: stack) -->
+        <div class="m-img"><img src="../images/stack.png" alt="Stack (Parking Garage) illustration"></div>
+        <span class="more"><span class="go"><b>↗</b>Learn more</span><em class="kind">LIFO</em></span>
+      </a>
+      <a class="mcard alt" href="queue.html">
+        <span class="tag">QUEUE</span><span class="tag">PARKING GARAGE</span>
+        <!-- PHOTO PLACEHOLDER (card: queue) -->
+        <div class="m-img"><img src="../images/queue.png" alt="Queue (Parking Garage) illustration"></div>
+        <span class="more"><span class="go"><b>↗</b>Learn more</span><em class="kind">FIFO</em></span>
+      </a>
+      <a class="mcard">
+        <span class="tag">BINARY</span><span class="tag">TREE</span>
+        <!-- PHOTO PLACEHOLDER (card: binary-tree) -->
+        <div class="m-img"><img src="../images/binary-tree.png" alt="Binary Tree illustration"></div>
+        <span class="more"><span class="go"><b>↗</b>Learn more</span><em class="kind">TREE</em></span>
+      </a>
+      <a class="mcard alt">
+        <span class="tag">BINARY</span><span class="tag">SEARCH TREE</span>
+        <!-- PHOTO PLACEHOLDER (card: binary-search-tree-->
+        <div class="m-img"><img src="../images/bst.png" alt="Binary Search Tree illustration"></div>
+        <span class="more"><span class="go"><b>↗</b>Learn more</span><em class="kind">O(log n)</em></span>
+      </a>
+      <a class="mcard">
+        <span class="tag">TOWER OF HANOI</span><span class="tag">(RECURSION)</span>
+        <!-- PHOTO PLACEHOLDER (card: tower-of-hanoi) -->
+        <div class="m-img"><img src="../images/hanoi.png" alt="Tower of Hanoi (Recursion) illustration"></div>
+        <span class="more"><span class="go"><b>↗</b>Learn more</span><em class="kind">O(2ⁿ)</em></span>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <!--  CASE STUDY INFORMATION SECTION  -->
+  <section class="wrap" id="case">
+    <!-- #ADD INFO :^D -->
+    <div class="sec-head"><h2>Case Study Information</h2><p><strong> THIS SECTION </strong> Explains....  </p></div>
+    <div class="case-box">
+      <svg class="mag" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#000" stroke-width="2" aria-hidden="true"><circle cx="22" cy="22" r="16"/><path d="M34 34l18 14"/></svg>
+      <!-- QUEUE AND STACK INFO -->
+      <h3>Parking Garage</h3>
+      <p>Accept a car using its plate number. Enter the plate and choose arrival or departure. The program shows how many times each car arrived and departed. The garage holds only 10 cars.</p>
+      <div class="case-cols">
+        <div class="case-col"><h4>Stack <span>LIFO</span></h4><p>Only the top car can leave. Cars above a departing car move out temporarily, then return in their original order.</p></div>
+        <div class="case-col"><h4>Queue <span>FIFO</span></h4><p>Cars enter at the rear and leave from the front. Cars ahead of a departing car re-queue at the rear.</p></div>
+      </div>
+
+       <!-- TREE INFO -->
+      <h3 class="case-sub">Tree</h3>
+      <p>Trees organize data in levels, with each node linking to the nodes below it. These two modules look at how a tree is built and how it is searched.</p>
+      <div class="case-cols">
+        <div class="case-col"><h4>Binary Tree <span>TREE</span></h4><p> ------------</p></div>
+        <div class="case-col"><h4>Binary Search Tree <span>O(log n)</span></h4><p>----------</p></div>
+      </div>
+
+      <!-- Recursion INFO  -->
+      <h3 class="case-sub"> Tower of Hanoi</h3>
+      <p>Recursion solves a big problem by breaking it into smaller copies of the same problem until a simple case is reached.</p>
+      <div class="case-cols case-cols-single">
+        <div class="case-col"><h4>Recursion  <span>O(2ⁿ)</span></h4><p>Move a stack of disks from one peg to another, one disk at a time, without ever placing a larger disk on a smaller one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US / TEAM: four blocks, one per member  -->
+  <section class="wrap" id="team">
+    <div class="sec-head"><h2>Team</h2><p>Meet the team behind this project.</p></div>
+    <div class="team">
+      <!-- TEAM MEMBER 1 (MASTER) -->
+      <article class="member">
+        <div class="m-top">
+          <div class="avatar"><img src="../images/team/de-guzman.jpg" alt="Irish B. De Guzman"></div>
+          <div><b>Irish B. De Guzman</b><span>Leader</span> <span> Back-end</span></div>
+        </div>
+        <!-- MASTER DESCRIPTION -->
+        <p> our master.</p>
+        <a class="fb-link" href="https://www.facebook.com/isheeshhh" target="_blank" rel="noopener noreferrer" aria-label="Irish B. De Guzman on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg><span>Facebook</span></a>
+      </article>
+      <!-- TEAM MEMBER 2 (ANNA) -->
+      <article class="member">
+        <div class="m-top">
+          <div class="avatar"><img src="../images/team/torio.png" alt="Anna Sharlene A. Torio"></div>
+          <div><b>Anna Sharlene A. Torio</b><span> GANDA LANG AMBAG</span></div>
+        </div>
+        <!--  ANNA DESCRIPTION    -->
+        <p> ewan, wala naman ata tong dulot .</p>
+        <a class="fb-link" href="https://www.facebook.com/annshrltr" target="_blank" rel="noopener noreferrer" aria-label="Anna Sharlene A. Torio on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg><span>Facebook</span></a>
+      </article>
+      <!--  TEAM MEMBER 3 (LIRAH)  -->
+      <article class="member">
+        <div class="m-top">
+          <div class="avatar"><img src="../images/team/molleda.jpg" alt="Lirah D. Molleda"></div>
+          <div><b>Lirah D. Molleda</b><span>Back-end</span></div>
+        </div>
+        <!-- LIRAH DESCRIPTION -->
+        <p> mag klase pata.</p>
+        <a class="fb-link" href="https://www.facebook.com/lirahdelatorremolleda" target="_blank" rel="noopener noreferrer" aria-label="Lirah D. Molleda on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg><span>Facebook</span></a>
+      </article>
+      <!-- TEAM MEMBER 4 (CALEB)-->
+      <article class="member">
+        <div class="m-top">
+          <div class="avatar"><img src="../images/team/panganiban.jpg" alt="Caleb Ponce L. Panganiban"></div>
+          <div><b>Caleb Ponce L. Panganiban </b><span>Front-end</span></div>
+        </div>
+        <!--  CALEB DESCRIPTION  -->
+        <p> ui.</p>
+        <a class="fb-link" href="https://www.facebook.com/cpl.panganiban.830" target="_blank" rel="noopener noreferrer" aria-label="Caleb P. Pangilinan on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg><span>Facebook</span></a>
+      </article>
+    </div>
+  </section>
+
+  <footer class="wrap foot">
+    <a class="brand" href="#top"><img src="../images/logo.png" alt=""><span>DSA-CPE</span></a>
+    <nav><a href="#menu">Modules</a><a href="#case">Case study</a><a href="#team">Team</a></nav>
+    <span>DSA-CPE @2026</span>
+  </footer>
+</main>
+
+<script src="../js/landing-page.js"></script>
+</body>
+</html>
