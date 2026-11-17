@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search Tree - DSA-CPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="../css/landing-page.css">
+  <link rel="stylesheet" href="../css/structures.css">
+</head>
+
+<body data-base="../" data-mode="binary-search-tree">
+  <main class="wrap module-page">
+    <div class="module-bar">
+      <a class="back-btn" href="landing-page.html#menu">← BACK</a>
+      <div>
+        <h1 class="module-title">Binary Search <em>Tree</em></h1>
+        <p class="module-sub">Insert numeric values into a search tree and view its in-order traversal, which lists the keys in sorted
+              order.</p>
+      </div>
+    </div>
+    <section class="workbench">
+      <div class="visual-column">
+        <section class="visual-panel">
+          <div class="visual-heading"><span class="live"><i></i> TREE VIEW</span><span id="bst-count">No tree
+              built</span></div>
+          <div class="tree-viewport" id="bst-view" aria-live="polite">
+            <p class="empty-state">Your search tree will appear here.</p>
+          </div>
+        </section>
+        <section class="traversal-panel" aria-live="polite">
+          <h2>In-order traversal</h2>
+          <p class="traversal-result" id="bst-in-order">—</p>
+        </section>
+      </div>
+      <aside class="control-panel">
+        <div class="panel-head"><span>BUILD A SEARCH TREE</span><span class="step">Numbers only</span></div>
+        <form id="bst-form" novalidate>
+          <label class="lbl" for="bst-node-count">Number of nodes</label>
+          <input class="field" id="bst-node-count" type="number" min="1" max="31" value="7" required>
+          <p class="hint">Enter exactly this many values, up to 31 nodes.</p>
+          <label class="lbl" for="bst-values">Numeric values</label>
+          <textarea class="field area" id="bst-values" rows="7" spellcheck="false" required
+            placeholder="8, 3, 10, 1, 6, 14, 4">8, 3, 10, 1, 6, 14, 4</textarea>
+          <p class="hint">Separate numbers with commas, spaces, or new lines. Duplicate values are placed to the right.
+          </p>
+          <div class="btn-row"><button class="btn" type="submit">Build tree</button><button class="btn ghost"
+              id="bst-clear" type="button">Clear</button></div>
+        </form>
+        <div class="status-message" id="bst-message" role="status" aria-live="polite"></div>
+      </aside>
+    </section>
+  </main>
+  <script src="../js/landing-page.js"></script>
+  <script src="../js/structures.js"></script>
+</body>
+
+</html>
