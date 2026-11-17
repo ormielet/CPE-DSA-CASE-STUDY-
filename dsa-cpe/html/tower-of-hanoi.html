@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower of Hanoi - DSA-CPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="../css/landing-page.css">
+  <link rel="stylesheet" href="../css/structures.css">
+</head>
+
+<body data-base="../" data-mode="tower-of-hanoi">
+  <main class="wrap module-page">
+    <div class="module-bar">
+      <a class="back-btn" href="landing-page.html#menu">← BACK</a>
+      <div>
+        <h1 class="module-title">Tower of <em>Hanoi</em></h1>
+        <p class="module-sub">Move a stack of disks from one peg to another, one disk at a time, without ever placing a larger disk on
+              a smaller one.</p>
+      </div>
+    </div>
+    <section class="hanoi-layout">
+      <div class="hanoi-main">
+        <div class="hanoi-mode-switch" role="group" aria-label="Hanoi interaction mode">
+          <button class="mode-button" type="button" data-hanoi-mode="manual" aria-pressed="false">Manual play</button>
+          <button class="mode-button active" type="button" data-hanoi-mode="recursion" aria-pressed="true">Recursion
+            trace</button>
+        </div>
+        <div class="visual-panel hanoi-panel">
+          <div class="visual-heading"><span class="live"><i></i> PUZZLE</span><span id="hanoi-progress">0 moves</span>
+          </div>
+          <div class="hanoi-board" id="hanoi-board" aria-label="Tower of Hanoi board">
+            <button class="hanoi-peg" type="button" data-peg="0" aria-label="Move to peg A"><span class="disk-stack"
+                id="peg-0"></span><span class="peg-pole"></span><span class="peg-base"></span><span class="peg-label">A
+                <small>START</small></span></button>
+            <button class="hanoi-peg" type="button" data-peg="1" aria-label="Move to peg B"><span class="disk-stack"
+                id="peg-1"></span><span class="peg-pole"></span><span class="peg-base"></span><span class="peg-label">B
+                <small>SPARE</small></span></button>
+            <button class="hanoi-peg" type="button" data-peg="2" aria-label="Move to peg C"><span class="disk-stack"
+                id="peg-2"></span><span class="peg-pole"></span><span class="peg-base"></span><span class="peg-label">C
+                <small>GOAL</small></span></button>
+          </div>
+        </div>
+        <div class="game-toolbar" id="manual-toolbar" hidden>
+          <p id="hanoi-message" class="status-message" role="status" aria-live="polite">Select a peg with a top disk,
+            then select its destination.</p>
+          <div class="game-actions"><button class="btn ghost small" id="hanoi-undo" type="button" disabled>Undo
+              move</button><button class="btn ghost small" id="hanoi-reset" type="button">Reset</button></div>
+        </div>
+        <section class="recursion-simulator" id="recursion-simulator">
+          <div class="trace-controls">
+            <div class="trace-progress-head">
+              <div>
+                <h2>Execution progress</h2>
+                <p><span id="trace-step">Step 0 / 0</span> <span class="trace-divider">·</span> <span
+                    id="trace-moves">Disk moves: 0 / 7</span></p>
+              </div>
+              <span class="trace-state" id="trace-state">Ready</span>
+            </div>
+            <input class="trace-scrubber" id="trace-scrubber" type="range" min="0" max="0" value="0"
+              aria-label="Execution step scrubber">
+            <div class="trace-toolbar">
+              <div class="trace-transport">
+                <button class="trace-icon" id="trace-reset" type="button" aria-label="Reset simulation"
+                  title="Reset simulation">↺</button>
+                <button class="trace-icon" id="trace-back" type="button" aria-label="Step backward"
+                  title="Step backward" disabled>←</button>
+                <button class="btn small" id="trace-play" type="button">Play</button>
+                <button class="trace-icon" id="trace-next" type="button" aria-label="Step forward"
+                  title="Step forward">→</button>
+              </div>
+              <div class="trace-options">
+                <div class="speed-picker" role="group" aria-label="Playback speed">
+                  <span>Speed</span>
+                  <button type="button" data-speed="0.5">0.5×</button><button type="button" data-speed="1"
+                    class="selected">1×</button><button type="button" data-speed="1.5">1.5×</button><button
+                    type="button" data-speed="2">2×</button>
+                </div>
+              </div>
+            </div>
+            <p class="trace-caption" id="trace-caption" aria-live="polite">Press Play or Step forward to start the
+              recursive calls.</p>
+            <p class="trace-shortcuts">Keyboard: Space play/pause · ← previous step · → next step · R reset</p>
+          </div>
+          <div class="trace-grid">
+            <section class="stack-panel" aria-live="polite">
+              <div class="trace-panel-head">
+                <div><span class="trace-kicker">LIFO MEMORY</span>
+                  <h2>Call stack</h2>
+                </div><span class="depth-counter">Depth <b id="stack-depth">0</b><i>/</i><b id="stack-max">3</b></span>
+              </div>
+              <div class="stack-well" id="call-stack">
+                <p class="empty-state">Call stack is empty. Step forward to push <code>solve()</code>.</p>
+              </div>
+              <div class="stack-base">STACK BASE <b>main()</b></div>
+            </section>
+            <section class="algorithm-panel">
+              <div class="trace-panel-head">
+                <div><span class="trace-kicker">RECURSION</span>
+                  <h2>Algorithm tracer</h2>
+                </div><span id="trace-line">Line —</span>
+              </div>
+              <ol class="algorithm-lines" id="algorithm-lines">
+                <li data-line="1"><code>function solve(n, source, auxiliary, destination):</code></li>
+                <li data-line="2"><code>if (n === 1):</code></li>
+                <li data-line="3"><code>moveDisk(1, source, destination)</code></li>
+                <li data-line="4"><code>return</code></li>
+                <li data-line="5"><code>solve(n - 1, source, destination, auxiliary)</code></li>
+                <li data-line="6"><code>moveDisk(n, source, destination)</code></li>
+                <li data-line="7"><code>solve(n - 1, auxiliary, source, destination)</code></li>
+                <li data-line="8"><code>return</code></li>
+              </ol>
+            </section>
+          </div>
+        </section>
+        <section class="move-log-panel">
+          <div class="visual-heading">
+            <h2>Move history</h2><span id="hanoi-minimum">Minimum: 7 moves</span>
+          </div>
+          <ol id="hanoi-history" class="move-history">
+            <li class="empty-state">Moves will appear here.</li>
+          </ol>
+        </section>
+      </div>
+      <aside class="control-panel hanoi-controls">
+        <div class="panel-head"><span>PUZZLE SETUP</span><span class="step">3 to 8 disks</span></div>
+        <label class="lbl" for="hanoi-disks">Number of disks</label>
+        <div class="disk-picker"><input class="field" id="hanoi-disks" type="number" min="3" max="8" value="3"><button
+            class="btn" id="hanoi-new-game" type="button">New game</button></div>
+        <div class="game-stats">
+          <div><span>Moves made</span><strong id="hanoi-move-count">0</strong></div>
+          <div><span>Fewest possible</span><strong id="hanoi-optimal">7</strong></div>
+        </div>
+        <p class="hint">Move one disk at a time. A larger disk can never go on top of a smaller disk.</p>
+      </aside>
+    </section>
+  </main>
+  <script src="../js/landing-page.js"></script>
+  <script src="../js/structures.js"></script>
+</body>
+
+</html>
